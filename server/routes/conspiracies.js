@@ -10,7 +10,7 @@ router.get('/', async(req, res, next) => {
         res.status(200).json(conspiracies);
 
     } catch (err) {
-        console.error('Error fetching messages:', err);
+        console.error('Error fetching conspiracies:', err);
         res.status(500).json({
             error: 'Internal Server Error',
             message: err.message

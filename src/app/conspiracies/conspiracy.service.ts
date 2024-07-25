@@ -98,13 +98,6 @@ export class ConspiracyService {
       }
     );
 
-    // this.maxContactId++;
-    // newContact.id = this.maxContactId.toString();
-    // this.contacts.push(newContact);
-
-    // const contactsListClone = this.contacts.slice();
-    // this.contactChangedEvent.next(contactsListClone);
-    // this.storeContacts();
   }
 
   updateConspiracy(originalConspiracy: Conspiracy, newConspiracy: Conspiracy) {
@@ -128,9 +121,7 @@ export class ConspiracyService {
           this.conspiracyChangedEvent.next(this.conspiracies.slice());
         }
       );
-    // const contactsListClone = this.contacts.slice();
-    // this.contactChangedEvent.next(contactsListClone);
-    // this.storeContacts();
+
   }
 
 

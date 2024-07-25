@@ -34,7 +34,6 @@ export class ConspiracyEditComponent {
           return
         }
         this.editMode = true;
-        // this.contact = { ... this.originalContact };
         this.conspiracy = JSON.parse(JSON.stringify(this.originalConspiracy));
         
       }
@@ -52,11 +51,11 @@ export class ConspiracyEditComponent {
     const imageUrl = values['imageUrl'].value;
     const group = [];
     // console.log(name, description, url);
-    const newContact = new Conspiracy('', name, rating, description, imageUrl);
+    const newConspiracy = new Conspiracy('', name, rating, description, imageUrl);
     if (this.editMode) {
-      this.conspiracyService.updateConspiracy(this.originalConspiracy, newContact);
+      this.conspiracyService.updateConspiracy(this.originalConspiracy, newConspiracy);
     } else {
-      this.conspiracyService.addConspiracy(newContact);
+      this.conspiracyService.addConspiracy(newConspiracy);
     }
     this.router.navigate(['/conspiracies']);
   }

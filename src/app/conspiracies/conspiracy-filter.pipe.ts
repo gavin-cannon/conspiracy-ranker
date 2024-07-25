@@ -7,17 +7,17 @@ import { Conspiracy } from './conspiracy.model';
 export class ConspiracyFilterPipe implements PipeTransform {
 
  
-transform(contacts: Conspiracy[], term: string) { 
-  let filteredContacts: Conspiracy[] =[];  
+transform(conspiracies: Conspiracy[], term: string) { 
+  let filteredConspiracies: Conspiracy[] =[];  
   if (term && term.length > 0) {
-     filteredContacts = contacts.filter(
-        (contact:Conspiracy) => contact.name.toLowerCase().includes(term.toLowerCase())
+     filteredConspiracies = conspiracies.filter(
+        (conspiracy:Conspiracy) => conspiracy.name.toLowerCase().includes(term.toLowerCase())
      );
   }
-  if (filteredContacts.length < 1){
-     return contacts;
+  if (filteredConspiracies.length < 1){
+     return conspiracies;
   }
-  return filteredContacts;
+  return filteredConspiracies;
 }
 
 
