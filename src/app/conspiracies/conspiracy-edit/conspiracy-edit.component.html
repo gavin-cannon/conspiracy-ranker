@@ -1,0 +1,53 @@
+<div class="panel panel-default">
+    <div class="panel-body">
+        <form id="contact-edit" #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="name">Name:</label>
+                    <input required #name="ngModel" [ngModel]="conspiracy?.name" name="name" type="text" id="name" class="form-control required" size="120" max="120">
+                    <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                        <p>Enter a valid name.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="description">Description:</label>
+                    <input required #description="ngModel" [ngModel]="conspiracy?.description" name="description" type="text" id="description" class="form-control required" size="120" max="255">
+                    <div class="alert alert-danger" *ngIf="description.touched && !description.valid">
+                        <p>Enter a valid description.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="rating">Rating:</label>
+                    <input #rating="ngModel" [ngModel]="conspiracy?.rating" name="rating" type="text" id="rating" class="form-control" size="150" max="255">
+                    <div class="alert alert-danger" *ngIf="rating.touched && !rating.valid">
+                        <p>Enter a valid rating.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 form-group">
+                    <label for="imageUrl">Image URL:</label>
+                    <input #imageUrl="ngModel" [ngModel]="conspiracy?.imageUrl" name="imageUrl" type="text" id="imageUrl" class="form-control" size="150" max="255">
+                </div>
+            </div>
+
+            <div *ngIf="name.touched && !name.valid || description.touched && !description.valid" class="alert alert-danger">
+                <p>The Name and description fields are required</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 btn-toolbar">
+                    <button [disabled]="!f.valid" class="btn btn-success" type="submit" (click)="onSubmit(f)">Save</button>
+                    <button class="btn btn-primary" type="button" (click)="onCancel()">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

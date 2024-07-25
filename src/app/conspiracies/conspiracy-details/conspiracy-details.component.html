@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="panel-title">{{ conspiracy.name }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <img src="{{ conspiracy.imageUrl }}" alt="{{ conspiracy.name }}" class="img-responsive">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 text-right">
+                <a [routerLink]="'edit'" class="btn btn-primary btn-xs">Edit</a>
+                <a (click)="onDelete()" class="btn btn-danger btn-xs">Delete</a>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <p><strong>Description:</strong> {{ conspiracy.description }}</p>
+                <p><strong>Rating:</strong> {{ conspiracy.rating }}</p>
+            </div>
+        </div>
+    </div>
+</div>
