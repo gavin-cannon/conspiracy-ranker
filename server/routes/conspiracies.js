@@ -52,19 +52,19 @@ router.put('/:id', async(req, res, next) => {
 
         if (!conspiracy) {
             return res.status(404).json({
-                message: 'Contact not found',
-                error: { conspiracy: 'Contact not found' }
+                message: 'Conspiracy not found',
+                error: { conspiracy: 'Conspiracy not found' }
             });
         }
 
         conspiracy.name = req.body.name;
-        contact.description = req.body.description;
-        contact.rating = req.body.rating;
-        contact.imageUrl = req.body.imageUrl;
+        conspiracy.description = req.body.description;
+        conspiracy.rating = req.body.rating;
+        conspiracy.imageUrl = req.body.imageUrl;
 
         const updatedConspiracy = await Conspiracy.updateOne({ id: req.params.id }, conspiracy);
         res.status(204).json({
-            message: 'Contact updated successfully'
+            message: 'Conspiracy updated successfully'
         });
     } catch (error) {
         res.status(500).json({
@@ -81,14 +81,14 @@ router.delete('/:id', async(req, res, next) => {
 
         if (!conspiracy) {
             return res.status(404).json({
-                message: 'Contact not found',
-                error: { conspiracy: 'Contact not found' }
+                message: 'Conspiracy not found',
+                error: { conspiracy: 'Conspiracy not found' }
             });
         }
 
         await Conspiracy.deleteOne({ id: req.params.id });
         res.status(204).json({
-            message: 'Contact deleted successfully'
+            message: 'Conspiracy deleted successfully'
         });
     } catch (error) {
         res.status(500).json({

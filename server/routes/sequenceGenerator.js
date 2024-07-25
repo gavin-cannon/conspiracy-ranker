@@ -14,7 +14,6 @@ class SequenceGenerator {
                     sequenceId = result._id;
                     maxConspiracyId = result.maxConspiracyId;
 
-                    console.log(result['maxConspiracyId']);
                     return result;
                 }
             );

@@ -1,0 +1,79 @@
+/* Panel Customization */
+
+.custom-panel {
+    border: 2px solid #4A90E2;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.custom-panel-heading {
+    background-color: #F5F7FA;
+    border-bottom: 2px solid #4A90E2;
+}
+
+.custom-panel-title {
+    color: #4A90E2;
+    /* Title color */
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.custom-panel-body {
+    background-color: #FFFFFF;
+    padding: 15px;
+}
+
+
+/* Input Group Customization */
+
+.custom-input-group {
+    margin-bottom: 15px;
+}
+
+.custom-search-input {
+    border: 1px solid #4A90E2;
+    border-radius: 4px;
+}
+
+.custom-search-button {
+    background-color: #4A90E2;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+
+/* Button Customization */
+
+.custom-new-button {
+    background-color: #7ED321;
+    color: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.custom-sort-button {
+    background-color: #F8E71C;
+    color: #333333;
+    border-radius: 4px;
+}
+
+
+/* List Group Customization */
+
+.custom-list-group {
+    margin-top: 10px;
+}
+
+.custom-list-item {
+    background-color: #F5F5F5;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.custom-list-item:hover {
+    background-color: #E0E0E0;
+    border-color: #CCCCCC;
+}

@@ -10,5 +10,49 @@ header {
 body {
     background-color: aliceblue;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Header Customization */
+
+.custom-header {
+    background-color: #4A90E2;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #FFFFFF;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 20px;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: #FFC107;
+    text-decoration: underline;
+}

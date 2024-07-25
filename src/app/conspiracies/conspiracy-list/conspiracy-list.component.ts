@@ -12,7 +12,7 @@ export class ConspiracyListComponent implements OnInit, OnDestroy{
   conspiracies: Conspiracy[] = [];
   subscription: Subscription = new Subscription();
   term: string = '';
-
+  sortDirection: 'asc' | 'desc' = 'asc';
   constructor(private conspiracyService: ConspiracyService) { }
   
 ngOnInit(): void {
@@ -31,5 +31,23 @@ ngOnDestroy(): void {
   search(value: string) {
     this.term = value;
   }
-  
+
+  toggleSort() {
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    this.sortConspiracies();
+  }
+
+
+  sortConspiracies() {
+    this.conspiracies.sort((a, b) => {
+      if (a.rating < b.rating) {
+        return this.sortDirection === 'asc' ? -1 : 1;
+      } else if (a.rating > b.rating) {
+        return this.sortDirection === 'asc' ? 1 : -1;
+      } else {
+        return 0;
+      }
+    });
+  }
+
 }

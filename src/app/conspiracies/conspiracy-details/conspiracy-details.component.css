@@ -1,0 +1,87 @@
+/* Panel Customization */
+
+.custom-panel {
+    border: 1px solid #4A90E2;
+    /* Custom border color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    margin-bottom: 20px;
+}
+
+.custom-panel-heading {
+    background-color: #F5F7FA;
+    /* Light background color */
+    border-bottom: 2px solid #4A90E2;
+    /* Custom border color */
+    padding: 15px;
+}
+
+.custom-title {
+    color: #4A90E2;
+    /* Title color */
+    font-size: 1.6em;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* Image Customization */
+
+.custom-img {
+    max-width: 100%;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+
+/* Button Customization */
+
+.custom-edit-button {
+    background-color: #7ED321;
+    /* Edit button color */
+    color: #FFFFFF;
+    /* Text color */
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.custom-delete-button {
+    background-color: #D0021B;
+    /* Delete button color */
+    color: #FFFFFF;
+    /* Text color */
+    border-radius: 4px;
+}
+
+.custom-panel-body {
+    background-color: #FFFFFF;
+    /* White background */
+    padding: 15px;
+}
+
+.custom-panel-body p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+
+/* Image Customization */
+
+.custom-img {
+    max-width: 100%;
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for transform and box-shadow */
+}
+
+
+/* Hover Effect */
+
+.hover-effect:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the image */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Add shadow effect */
+}

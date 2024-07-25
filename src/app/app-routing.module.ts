@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConspiraciesComponent } from './conspiracies/conspiracies.component';
 import { ConspiracyEditComponent } from './conspiracies/conspiracy-edit/conspiracy-edit.component';
 import { ConspiracyDetailsComponent } from './conspiracies/conspiracy-details/conspiracy-details.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/conspiracies', pathMatch: 'full' },
@@ -11,7 +12,11 @@ const routes: Routes = [
             { path: 'new', component: ConspiracyEditComponent },
             { path: ':id', component: ConspiracyDetailsComponent },
             { path: ':id/edit', component: ConspiracyEditComponent}
-    ]},
+    ]
+  },
+  {
+      path: 'about', component: AboutComponent
+    }
 ];
 
 @NgModule({

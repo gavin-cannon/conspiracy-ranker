@@ -1,29 +1,39 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <div class="row">
-            <span class="title pad-left-right">Conspiracies</span>
-        </div>
-        <div class="row">
-            <div class="input-group pull-left pad-left-right col-xs-7">
-
-                <input type="text" class="form-control" placeholder="Enter a search value." #searchBox (keyup)="search(searchBox.value)">
-
-                <div class="glyphicon glyphicon-search input-group-addon" (click)="search(searchBox.value)"></div>
-            </div>
-            <div class="pull-right pad-left-right">
-                <a class="btn btn-success" [routerLink]="['new']">New Conspiracy</a>
-            </div>
-        </div>
-
-    </div>
-    <div class="panel-body">
-        <div class="row">
-
-        </div>
-        <hr>
+<div class="panel custom-panel">
+    <div class="panel-heading custom-panel-heading">
         <div class="row">
             <div class="col-xs-12">
-                <app-conspiracy-item [routerLink]="conspiracyEl.id" *ngFor="let conspiracyEl of conspiracies | conspiraciesFilter:term" [conspiracy]="conspiracyEl"></app-conspiracy-item>
+                <h3 class="panel-title custom-panel-title">Conspiracies</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-7">
+                <div class="input-group custom-input-group">
+                    <input type="text" class="form-control custom-search-input" placeholder="Enter a search value." #searchBox (keyup)="search(searchBox.value)">
+                    <span class="input-group-btn">
+                        <button class="btn custom-search-button" type="button" (click)="search(searchBox.value)">
+                            <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-5 text-right">
+                <a class="btn custom-new-button" [routerLink]="['new']">
+                    <span class="glyphicon glyphicon-plus"></span> New Conspiracy
+                </a>
+                <button class="btn custom-sort-button" (click)="toggleSort()">
+                    <span class="glyphicon glyphicon-sort"></span> Sort by Rating ({{ sortDirection === 'asc' ? 'Ascending' : 'Descending' }})
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="panel-body custom-panel-body">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="list-group custom-list-group">
+                    <app-conspiracy-item *ngFor="let conspiracyEl of conspiracies | conspiraciesFilter:term" [routerLink]="conspiracyEl.id" [conspiracy]="conspiracyEl" class="list-group-item custom-list-item">
+                        <!-- Add additional styling or content here if needed -->
+                    </app-conspiracy-item>
+                </div>
             </div>
         </div>
     </div>

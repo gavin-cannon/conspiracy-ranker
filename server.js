@@ -13,16 +13,6 @@ const conspiraciesRoutes = require('./server/routes/conspiracies');
 var mongoose = require('mongoose');
 
 
-
-// establish a connection to the mongo database
-// mongoose.connect('mongodb://localhost:27017/cms', { useNewUrlParser: true }, (err, res) => {
-// if (err) {
-// console.log('Connection failed: ' + err);
-// } else {
-// console.log('Connected to database!');
-// }
-// });
-
 async function connectToDatabase() {
     try {
         await mongoose.connect('mongodb://localhost:27017/conspiracy-ranker', {
@@ -35,26 +25,17 @@ async function connectToDatabase() {
     }
 }
 connectToDatabase();
-// mongoose.connect('mongodb+srv://cannongavin20:FWYPcFqz6HIkeZOI@cluster0.d5yauge.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
-//     .then(() => {
-//         console.log('Connected to database!');
-//     })
-//     .catch(err => {
-//         console.log('Connection failed!', err);
-//     });
 
-// ... ADD CODE TO IMPORT YOUR ROUTING FILES HERE ... 
 
-var app = express(); // create an instance of express
+var app = express();
 
-// Tell express to use the following parsers for POST data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
 
-app.use(logger('dev')); // Tell express to use the Morgan logger
+app.use(logger('dev'));
 
 // Add support for CORS
 app.use((req, res, next) => {
@@ -70,30 +51,25 @@ app.use((req, res, next) => {
     next();
 });
 
-// Tell express to use the specified director as the
-// root directory for your web site
+
 app.use(express.static(path.join(__dirname, 'dist/final-project/browser')));
 
-// Tell express to map the default route ('/') to the index route
+
 app.use('/', index);
 app.use('/conspiracies', conspiraciesRoutes);
 
 
-// ... ADD YOUR CODE TO MAP YOUR URL'S TO ROUTING FILES HERE ...
 
-// Tell express to map all other non-defined routes back to the index page
+
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist/final-project/browser/index.html'));
 });
 
-// Define the port address and tell express to use this port
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
-// Create HTTP server.
 const server = http.createServer(app);
 
-// Tell the server to start listening on the provided port
 server.listen(port, function() {
     console.log('API running on localhost: ' + port)
 });

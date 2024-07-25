@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ConspiracyFilterPipe } from './conspiracies/conspiracy-filter.pipe';
 import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ConspiracyEditComponent,
     ConspiracyDetailsComponent,
     ConspiracyFilterPipe,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
