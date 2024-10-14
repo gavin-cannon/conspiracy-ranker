@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const sequenceGenerator = require('./sequenceGenerator');
-const conspiracy = require('../models/conspiracy');
+const Conspiracy = require('../models/conspiracy');
 
 router.get('/', async(req, res, next) => {
     try {
-        const conspiracies = await conspiracy.find();
+        const conspiracies = await Conspiracy.find();
         console.log(conspiracies);
         res.status(200).json(conspiracies);
 
@@ -48,7 +48,7 @@ router.post('/', async(req, res, next) => {
 // PUT update a conspiracy by ID
 router.put('/:id', async(req, res, next) => {
     try {
-        const conspiracy = await conspiracy.findOne({ id: req.params.id });
+        const conspiracy = await Conspiracy.findOne({ id: req.params.id });
 
         if (!conspiracy) {
             return res.status(404).json({
@@ -62,7 +62,7 @@ router.put('/:id', async(req, res, next) => {
         conspiracy.rating = req.body.rating;
         conspiracy.imageUrl = req.body.imageUrl;
 
-        const updatedConspiracy = await conspiracy.updateOne({ id: req.params.id }, conspiracy);
+        const updatedConspiracy = await Conspiracy.updateOne({ id: req.params.id }, conspiracy);
         res.status(204).json({
             message: 'Conspiracy updated successfully'
         });
@@ -77,7 +77,7 @@ router.put('/:id', async(req, res, next) => {
 // DELETE a conspiracy by ID
 router.delete('/:id', async(req, res, next) => {
     try {
-        const conspiracy = await conspiracy.findOne({ id: req.params.id });
+        const conspiracy = await Conspiracy.findOne({ id: req.params.id });
 
         if (!conspiracy) {
             return res.status(404).json({
@@ -86,7 +86,7 @@ router.delete('/:id', async(req, res, next) => {
             });
         }
 
-        await conspiracy.deleteOne({ id: req.params.id });
+        await Conspiracy.deleteOne({ id: req.params.id });
         res.status(204).json({
             message: 'Conspiracy deleted successfully'
         });
