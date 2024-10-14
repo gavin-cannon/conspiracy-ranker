@@ -4,7 +4,7 @@ I built this as a final project for my Web Full Stack course. It is built on Ang
 
 ![Conspiracy Ranker 1](./images/cons1.jpg)
 ![Conspiracy Ranker 2](./images/cons2.jpg)
-
+[Brief Demo](https://youtu.be/hyyGc6Y_x_w)
 
 # Development Environment
 
